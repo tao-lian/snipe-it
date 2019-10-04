@@ -218,7 +218,10 @@ class AssetsController extends Controller
                 $assets->where('assets.assigned_to', '>', '0');
                 break;
             case 'FixedAssets':                
-                $assets->join('models AS models_alias',function ($join) {
+                $assets->join('status_labels AS status_alias',function ($join) {
+                    $join->on('status_alias.id', "=", "assets.status_id")
+                    ->where('status_alias.archived', '=', 0);
+                })->join('models AS models_alias',function ($join) {
                     $join->on('models_alias.id', "=", "assets.model_id");
                 })->join('categories AS category_alias', function ($join){
                     $join->on('category_alias.id', "=", "models_alias.category_id")
