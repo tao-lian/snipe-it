@@ -447,6 +447,13 @@
                     </li>
 
                     @can('audit', \App\Models\Asset::class)
+                        <li{!! (Request::query('status') == 'FixedAssets' ? ' class="active"' : '') !!}>
+                            <a href="{{ url('hardware?status=FixedAssets') }}">
+                                <i class="fa fa-circle-o text-aqua"></i>
+                                {{ trans('general.all') }}
+                                {{ trans('general.fixed_assets') }}
+                            </a>
+                        </li>
                         <li{!! (Request::is('hardware/audit/due') ? ' class="active"' : '') !!}>
                             <a href="{{ route('assets.audit.due') }}">
                                 <i class="fa fa-clock-o text-yellow"></i> {{ trans('general.audit_due') }}

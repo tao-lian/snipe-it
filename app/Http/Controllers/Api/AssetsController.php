@@ -217,6 +217,14 @@ class AssetsController extends Controller
                 // more sad, horrible workarounds for laravel bugs when doing full text searches
                 $assets->where('assets.assigned_to', '>', '0');
                 break;
+            case 'FixedAssets':                
+                $assets->join('models AS models_alias',function ($join) {
+                    $join->on('models_alias.id', "=", "assets.model_id");
+                })->join('categories AS category_alias', function ($join){
+                    $join->on('category_alias.id', "=", "models_alias.category_id")
+                    ->where('category_alias.fixed_assets','=',1);
+                });
+                break;
             default:
 
                 if ((!$request->filled('status_id')) && ($settings->show_archived_in_list!='1')) {
