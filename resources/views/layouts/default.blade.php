@@ -449,7 +449,7 @@
                     @can('audit', \App\Models\Asset::class)
                         <li{!! (Request::query('status') == 'FixedAssets' ? ' class="active"' : '') !!}>
                             <a href="{{ url('hardware?status=FixedAssets') }}">
-                                <i class="fa fa-circle-o text-blue"></i>
+                                <i class="fa fa-circle-o text-aqua"></i>
                                 {{ trans('general.all') }}
                                 {{ trans('general.fixed_assets') }}
                             </a>
