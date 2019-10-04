@@ -71,7 +71,15 @@
     </div>
 </div>
 
-
+<!-- Is Fixed Assets -->
+<div class="form-group">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+        {{ Form::checkbox('fixed_assets', '1', old('fixed_assets', $item->fixed_assets), ['class'=>'minimal']) }}
+        {{ trans('admin/categories/general.fixed_assets') }}
+    </div>
+</div>
 
 <!-- Image -->
 @if ($item->image)

@@ -93,6 +93,7 @@
     'files'                 => 'Files',
     'file_name'				=> 'File',
     'file_uploads'			=> 'File Uploads',
+    'fixed_assets'          => 'Fixed Assets',
     'generate'				=> 'Generate',
      'github_markdown'      => 'This field accepts <a href="https://help.github.com/articles/github-flavored-markdown/">Github flavoured markdown</a>.',
     'groups'				=> 'Groups',
