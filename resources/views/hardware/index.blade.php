@@ -26,7 +26,7 @@
   @elseif (Input::get('status')=='Deleted')
     {{ trans('general.deleted') }}
   @elseif (Input::get('status')=='FixedAssets')
-    {{ trans('general.fixed_assets') }}
+    {{ trans('general.fixed') }}
   @endif
 @else
 {{ trans('general.all') }}
